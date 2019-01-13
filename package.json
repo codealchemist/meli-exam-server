@@ -1,0 +1,31 @@
+{
+  "name": "meli-exam-server",
+  "version": "1.0.0",
+  "description": "MELI Exam, server app.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "MODE=dev node src/index.js",
+    "prod": "node src/index.js",
+    "test": "standard-focus"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codealchemist/meli-exam-server.git"
+  },
+  "keywords": [
+    "meli",
+    "exam"
+  ],
+  "author": "Alberto Miranda",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codealchemist/meli-exam-server/issues"
+  },
+  "homepage": "https://github.com/codealchemist/meli-exam-server#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "standard-focus": "^1.1.2"
+  }
+}
