@@ -1,8 +1,9 @@
 const cors = require('cors')
 const whitelist = require('./whitelist.json')
+const isDev = process.env.MODE === 'dev'
 
 function setCors (app) {
-  const corsOptions = {
+  let corsOptions = {
     credentials: true,
     origin: (origin, callback) => {
       if (!origin) return callback('Origin Not Allowed (empty)', false)
@@ -19,6 +20,7 @@ function setCors (app) {
     }
   }
 
+  if (isDev) corsOptions = null
   app.use(cors(corsOptions))
 }
 

@@ -10,18 +10,19 @@ function setApi (app) {
   // Product search.
   app.get('/api/items', (req, res) => {
     console.log('PRODUCT SEARCH: /api/items', req.query)
-    const { query } = req.query
-    request(`${baseUrl}/sites/MLA/search?q=${query}`, (err, response, body) => {
+    const { q } = req.query
+    request(`${baseUrl}/sites/MLA/search?q=${q}`, (err, response, body) => {
       if (err) {
         console.log('ERROR', err)
         return res.status(500).send(err)
       }
 
-      const { results } = JSON.parse(body)
+      const { results, filters } = JSON.parse(body)
       const data = {
         author,
         categories: helpers.getCategories(results),
-        items: helpers.getItems(results)
+        items: helpers.getItems(results),
+        filters
       }
 
       res.json(data)
@@ -46,7 +47,8 @@ function setApi (app) {
             ...helpers.itemAdapter(detailsObj),
             picture: detailsObj.pictures[0].url,
             sold_quantity: detailsObj.sold_quantity,
-            description: descriptionObj.plain_text
+            description: descriptionObj.plain_text,
+            category_id: detailsObj.category_id
           }
         }
         return res.json(data)
