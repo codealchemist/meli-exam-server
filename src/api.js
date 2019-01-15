@@ -12,7 +12,7 @@ function setApi (app) {
     console.log('PRODUCT SEARCH: /api/items', req.query)
     const { q } = req.query
     request(`${baseUrl}/sites/MLA/search?q=${q}`, (err, response, body) => {
-      if (err) {
+      if (err || response.statusCode === 500) {
         console.log('ERROR', err)
         return res.status(500).send(err)
       }
@@ -63,7 +63,7 @@ function setApi (app) {
     const { id } = req.params
     console.log(`CATEGORY DETAILS: /api/categories/${id}`)
     request(`${baseUrl}/categories/${id}`, (err, response, body) => {
-      if (err) {
+      if (err || response.statusCode === 500) {
         console.log('ERROR', err)
         return res.status(500).send(err)
       }
