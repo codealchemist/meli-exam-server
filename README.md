@@ -2,7 +2,8 @@
 
 Server app for MELI frontend engineering exam.
 
-[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Build Status](https://travis-ci.org/codealchemist/meli-exam-server.svg?branch=master)](https://travis-ci.org/codealchemist/meli-exam-server)
 
 # API
 
