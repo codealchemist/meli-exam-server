@@ -33,7 +33,7 @@ describe('api', () => {
     it('should return search results', async () => {
       // Mock MELI API.
       nock(baseUrl)
-        .get('/sites/MLA/search?q=bose')
+        .get('/sites/MLA/search?q=bose&limit=4')
         .reply(200, meliResultsMock)
 
       await request(app)
