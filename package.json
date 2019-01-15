@@ -6,7 +6,8 @@
   "scripts": {
     "start": "MODE=dev node src/index.js",
     "prod": "node src/index.js",
-    "test": "jest --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "standard-focus"
   },
   "repository": {

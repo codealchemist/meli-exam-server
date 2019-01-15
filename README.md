@@ -57,9 +57,15 @@ It will leverage CORS and domain whitelisting.
 
 # Testing
 
-Run test with `npm test`.
+Run test on a single pass with `npm test`.
 
-You can optionally run the linter on the command line with `npm run lint`.
+Test during development, watching for file changes: `npm run test:watch`.
+
+# Linting
+
+Run the linter on the command line with `npm run lint`.
+
+`.eslintrc` already extends `standard` so if your IDE supports integration with ESLINT you'll get linting there.
 
 # About
 
