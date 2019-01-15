@@ -6,7 +6,8 @@
   "scripts": {
     "start": "MODE=dev node src/index.js",
     "prod": "node src/index.js",
-    "test": "standard-focus"
+    "test": "jest --watch",
+    "lint": "standard-focus"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,17 @@
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^4.16.4",
+    "nock": "^10.0.6",
     "request": "^2.88.0",
     "standard-focus": "^1.1.2"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0",
+    "supertest": "^3.3.0"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
   }
 }
