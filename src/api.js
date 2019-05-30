@@ -11,7 +11,7 @@ function setApi (app) {
   app.get('/api/items', (req, res) => {
     console.log('PRODUCT SEARCH: /api/items', req.query)
     const { q } = req.query
-    request(`${baseUrl}/sites/MLA/search?q=${q}&limit=4`, (err, response, body) => {
+    request(`${baseUrl}/sites/MLA/search?q=${q}&limit=50&seller_id=51776267`, (err, response, body) => {
       if (err || response.statusCode === 500) {
         console.log('ERROR', err)
         return res.status(500).send(err)
